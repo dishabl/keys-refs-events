@@ -16,13 +16,9 @@ function App() {
       setInputText("");
     }
   };
-  const increment = () => setArr1(add);
-  function add() {
-    for (let i = 0; i < arr.length; i++) {
-      arr[i] = "!!!" + arr[i];
-    }
-    setArr1(arr);
-  }
+  const increment = () => {
+    setArr1([...arr1.map((item) => "!!!" + item)]);
+  };
 
   return (
     <div className="App">
