@@ -16,6 +16,13 @@ function App() {
       setInputText("");
     }
   };
+  const increment = () => setArr1(add);
+  function add() {
+    for (let i = 0; i < arr.length; i++) {
+      arr[i] = "!!!" + arr[i];
+    }
+    setArr1(arr);
+  }
 
   return (
     <div className="App">
@@ -38,7 +45,7 @@ function App() {
           Focus
         </button>
         <br></br>
-        <List array={arr1} />
+        <List array={arr1} func={increment} />
       </header>
     </div>
   );
