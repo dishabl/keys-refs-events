@@ -1,13 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 
-function List({ array }) {
-  const [state, setState] = useState(array);
-  const increment = () => setState(add);
+function List({ array, func }) {
   const listItems = array.map((item, index) => <li key={index + 1}>{item}</li>);
-  const add = () => array.unshift("!!!");
+
   return (
     <>
-      <button onClick={increment}>add !!!</button>
+      <button onClick={func}>add !!!</button>
       <ul>{listItems}</ul>
     </>
   );
